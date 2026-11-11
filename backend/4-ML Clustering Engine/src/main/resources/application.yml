@@ -1,0 +1,19 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: ML-CLUSTERING   # name used by the API Gateway: lb://ML-CLUSTERING
+  data:
+    mongodb:
+      # MongoDB connects lazily: the service starts even if MongoDB is not running yet
+      uri: ${MONGODB_URI:mongodb://localhost:27017/clustering_db}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  health:
+    mongo:
+      enabled: false   # re-enable once MongoDB runs with the service (docker compose up -d)

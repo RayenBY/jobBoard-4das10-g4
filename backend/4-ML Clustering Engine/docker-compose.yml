@@ -1,0 +1,11 @@
+services:
+  clustering-db:
+    image: mongo:7
+    container_name: clustering-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - clustering_data:/data/db
+
+volumes:
+  clustering_data:
