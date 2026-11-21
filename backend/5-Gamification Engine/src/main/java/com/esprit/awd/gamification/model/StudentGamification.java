@@ -26,4 +26,26 @@ public class StudentGamification {
 
     // Refers to Avatar.id (0..1: the student may not have chosen one yet)
     private Long selectedAvatarId;
+
+    public StudentGamification() {
+    }
+
+    public StudentGamification(Long studentId) {
+        this.studentId = studentId;
+    }
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public Long getStudentId() { return studentId; }
+    public void setStudentId(Long studentId) { this.studentId = studentId; }
+
+    public int getTotalPoints() { return totalPoints; }
+    public void setTotalPoints(int totalPoints) { this.totalPoints = totalPoints; }
+
+    public Long getCurrentLevelId() { return currentLevelId; }
+    public void setCurrentLevelId(Long currentLevelId) { this.currentLevelId = currentLevelId; }
+
+    public Long getSelectedAvatarId() { return selectedAvatarId; }
+    public void setSelectedAvatarId(Long selectedAvatarId) { this.selectedAvatarId = selectedAvatarId; }
 }

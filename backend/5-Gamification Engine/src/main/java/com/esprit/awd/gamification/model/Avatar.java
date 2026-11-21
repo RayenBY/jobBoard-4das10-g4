@@ -19,4 +19,25 @@ public class Avatar {
     private String imageUrl;
 
     private int requiredPoints;
+
+    public Avatar() {
+    }
+
+    public Avatar(String name, String imageUrl, int requiredPoints) {
+        this.name = name;
+        this.imageUrl = imageUrl;
+        this.requiredPoints = requiredPoints;
+    }
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getImageUrl() { return imageUrl; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+
+    public int getRequiredPoints() { return requiredPoints; }
+    public void setRequiredPoints(int requiredPoints) { this.requiredPoints = requiredPoints; }
 }
