@@ -1,4 +1,4 @@
-package com.awd.analytics;
+package com.awd.feedback;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "Hello, je suis le microservice 6 : Analytics";
+        return "Hello, je suis le microservice 6 : Group Feedback";
     }
 }
