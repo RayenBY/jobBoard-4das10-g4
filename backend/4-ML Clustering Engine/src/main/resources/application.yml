@@ -1,19 +1,45 @@
+
 server:
   port: 8084
 
 spring:
   application:
-    name: ML-CLUSTERING   # name used by the API Gateway: lb://ML-CLUSTERING
+    name: ML-CLUSTERING # Name used by API Gateway: lb://ML-CLUSTERING
   data:
     mongodb:
-      # MongoDB connects lazily: the service starts even if MongoDB is not running yet
+      # MongoDB connection
       uri: ${MONGODB_URI:mongodb://localhost:27017/clustering_db}
 
+# Eureka Client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+    healthcheck:
+      enabled: true
+  instance:
+    prefer-ip-address: true
+
+# Actuator
 management:
   endpoints:
     web:
       exposure:
         include: health,info
+  endpoint:
+    health:
+      show-details: always
   health:
     mongo:
-      enabled: false   # re-enable once MongoDB runs with the service (docker compose up -d)
+      enabled: false
+  info:
+    env:
+      enabled: true
+
+# Application Info
+info:
+  app:
+    name: ML Clustering Engine
+    version: 1.0.0
