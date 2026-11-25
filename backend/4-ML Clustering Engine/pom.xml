@@ -42,9 +42,7 @@
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
 
-        <!-- Added later: Eureka client, Config Client, OpenFeign, Resilience4j,
-             OAuth2 resource server (Keycloak), AMQP (RabbitMQ) -->
-
+       
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
