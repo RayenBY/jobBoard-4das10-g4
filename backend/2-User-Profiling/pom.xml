@@ -38,6 +38,13 @@
       <artifactId>spring-boot-starter-actuator</artifactId>
     </dependency>
 
+    <!-- Swagger UI / OpenAPI (springdoc 3.x = Spring Boot 4) -->
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+      <version>3.1.0</version>
+    </dependency>
+
     <!-- Persistence: MySQL (user_db) -->
     <dependency>
       <groupId>org.springframework.boot</groupId>

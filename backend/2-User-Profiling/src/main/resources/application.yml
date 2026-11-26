@@ -17,15 +17,36 @@ spring:
       ddl-auto: update
     open-in-view: false
 
+# Eureka client: registers as USER-SERVICE and sends a heartbeat every 30 s.
+# Default: Eureka on this PC. For another PC, set EUREKA_URL before starting.
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
+    register-with-eureka: true
+    fetch-registry: true            # needed later to find AUTH-SERVICE for OpenFeign
+    healthcheck:
+      enabled: true                 # Eureka shows the real /actuator/health status (DOWN if MySQL is down)
   instance:
     prefer-ip-address: true
 
+# Actuator
 management:
   endpoints:
     web:
       exposure:
-        include: health,info
+        include: health,info,metrics,loggers
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true                 # publishes the info.* properties below in /actuator/info
+
+# Published in /actuator/info
+info:
+  app:
+    name: User / Profiling
+    version: 1.0.0
+    description: Microservice de gestion des profils, interets, competences et styles d'apprentissage
+    team: The Skill Weavers
