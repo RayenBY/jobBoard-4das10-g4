@@ -1,0 +1,201 @@
+{
+  "info": {
+    "name": "JobBoard - API Gateway",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Gamification (MS5)",
+      "item": [
+        {
+          "name": "Hello",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{gateway}}/api/gamification/hello",
+              "host": [
+                "{{gateway}}"
+              ],
+              "path": [
+                "api",
+                "gamification",
+                "hello"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Ajouter des points",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{gateway}}/api/gamification/points",
+              "host": [
+                "{{gateway}}"
+              ],
+              "path": [
+                "api",
+                "gamification",
+                "points"
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": 1,\n  \"points\": 50,\n  \"reason\": \"COURSE_COMPLETED\",\n  \"eventId\": \"evt-001\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Profil étudiant",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{gateway}}/api/gamification/students/1",
+              "host": [
+                "{{gateway}}"
+              ],
+              "path": [
+                "api",
+                "gamification",
+                "students",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Historique des points",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{gateway}}/api/gamification/students/1/transactions",
+              "host": [
+                "{{gateway}}"
+              ],
+              "path": [
+                "api",
+                "gamification",
+                "students",
+                "1",
+                "transactions"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Choisir un avatar",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{gateway}}/api/gamification/students/1/avatar/1",
+              "host": [
+                "{{gateway}}"
+              ],
+              "path": [
+                "api",
+                "gamification",
+                "students",
+                "1",
+                "avatar",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Classement",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{gateway}}/api/gamification/leaderboard",
+              "host": [
+                "{{gateway}}"
+              ],
+              "path": [
+                "api",
+                "gamification",
+                "leaderboard"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Niveaux",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{gateway}}/api/gamification/levels",
+              "host": [
+                "{{gateway}}"
+              ],
+              "path": [
+                "api",
+                "gamification",
+                "levels"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Badges",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{gateway}}/api/gamification/badges",
+              "host": [
+                "{{gateway}}"
+              ],
+              "path": [
+                "api",
+                "gamification",
+                "badges"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Avatars",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{gateway}}/api/gamification/avatars",
+              "host": [
+                "{{gateway}}"
+              ],
+              "path": [
+                "api",
+                "gamification",
+                "avatars"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "gateway",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
